@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عن المشروع - المبتكر الصغير</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* تصميم الزر */
+  .back-button {
+    background-color: rgb(83 49 218); /* اللون الخلفي للزر */
+    color: white; /* اللون النص */
+    border: none; /* إزالة الحدود */
+    padding: 10px 20px; /* المسافة داخل الزر */
+    text-align: center; /* محاذاة النص */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور على الزر */
+    border-radius: 5px; /* حواف دائرية */
+    display: inline-flex; /* لعرض السهم والنص بجانب بعض */
+    align-items: center; /* محاذاة العناصر */
+    transition: background-color 0.3s ease; /* تأثير التحول */
+  }
+  
+  /* تصميم السهم */
+  .arrow {
+    margin-right: 8px; /* المسافة بين السهم والنص */
+  }
+  
+  /* تأثير التحول عند التمرير على الزر */
+  .back-button:hover {
+    background-color: #a04598; /* تغيير اللون عند التمرير */
+  }
+  
+  </style>
+  <style>
+    /* التصميم العام */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .app-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      padding: 5vh 2vw;
+      text-align: center;
+    }
+
+    .app-header {
+      text-align: center;
+      padding: 5vh;
+      background: rgba(0, 0, 0, 0.2);
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .app-header h1 {
+      font-size: 4vw;
+      margin-bottom: 2vh;
+    }
+
+    .app-header p {
+      font-size: 3.5vw;
+      opacity: 0.8;
+    }
+
+    .app-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3vh;
+      padding: 3vw;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 2vh;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4vh 3vw;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-section h2 {
+      font-size: 4.5vw;
+      margin-bottom: 1vh;
+    }
+
+    .content-section p {
+      font-size: 3.8vw;
+      opacity: 0.8;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2vw;
+      margin-top: 3vh;
+    }
+
+    .contact-buttons a {
+      background-color: #25d366;
+      color: white;
+      padding: 1.5vh 3vw;
+      border-radius: 8px;
+      font-size: 3vw;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1vw;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #128c7e;
+    }
+
+    .contact-buttons a i {
+      font-size: 4vw;
+    }
+
+    .app-footer {
+      text-align: center;
+      padding: 2vh;
+      background: rgba(0, 0, 0, 0.2);
+      opacity: 0.8;
+      width: 100%;
+      margin-top: 5vh;
+    }
+
+    /* تحسين التصميم للشاشات الصغيرة جدًا */
+    @media (max-width: 480px) {
+      body {
+        padding: 0;
+      }
+
+      .app-header h1 {
+        font-size: 8vw;
+      }
+
+      .app-header p {
+        font-size: 6vw;
+      }
+
+      .content-section {
+        padding: 4vh 2vw;
+      }
+
+      .content-section h2 {
+        font-size: 6vw;
+      }
+
+      .content-section p {
+        font-size: 5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>✨ المبتكر الصغير</h1>
+      <p>رؤيتنا: تعليم نشط وابتكار مستدام!</p>
+    </header>
+
+    <main class="app-content">
+      <div class="content-section">
+        <h2>نبذة عني</h2>
+        <p>أنا يوسف أحمد جمعة مهتم بتقديم حلول تعليمية مبتكرة من خلال أدوات تكنولوجيا حديثة تهدف إلى تحسين تجربتهم التعليمية. هدفي هو تعليم من خلال التفاعل والنشاطات المبدعة.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>التعليم النشط</h2>
+        <p>التعليم النشط هو نهج تربوي يعزز من مشاركة الطلاب في العملية التعليمية من خلال الأنشطة والتجارب العملية التي تتيح لهم التفكير النقدي والتفاعل الفعّال مع المحتوى التعليمي.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>ترجمة لغة الإشارة</h2>
+        <p>ترجمة لغة الإشارة تسهم في تسهيل التواصل بين الأفراد من ذوي الاحتياجات الخاصة والمجتمع بشكل عام، مما يساهم في دمجهم بشكل أكبر في النشاطات التعليمية والمجتمعية.</p>
+      </div>
+
+      <div class="contact-buttons">
+        <a href="https://wa.me/201024485693?text=هذا%20التطبيق%20رائع" target="_blank">
+          <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+        </a>
+        <a href="mailto:yjmt46999@gmail.com" target="_blank">
+          <i class="fas fa-envelope"></i> تواصل عبر البريد الإلكتروني
+        </a>
+      </div>
+    </main>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html';" data-bs-dismiss="modal">رجوع</button>
+    </div>    
+    <footer class="app-footer">
+      <p>© 2024 المبتكر الصغير | جميع الحقوق محفوظة</p>
+      <p>هذا العمل مقدم لمسابقة المبتكر الصغير</p>
+      <p>نحن نؤمن بأن التعليم النشط والابتكار لهما دور كبير في بناء مستقبل الأطفال، ونهدف من خلال هذا العمل إلى تحسين تجربة التعليم للأطفال ودمجهم بشكل أفضل في المجتمع.</p>
+    </footer>
+  </div>
+  <style>
+    /* تنسيق المودال */
+    .modal-content {
+      background: rgba(255, 255, 255, 0.9); /* خلفية خفيفة لتوفير تباين */
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة تأثير الظل */
+    }
+  
+    /* تنسيق رأس المودال */
+    .modal-header {
+      border-bottom: 1px solid #eee; /* فصل رأس المودال */
+      background-color: #6a11cb; /* خلفية ملونة */
+      border-radius: 15px 15px 0 0;
+      color: white;
+    }
+  
+    /* تنسيق النص داخل المودال */
+    .modal-body {
+      padding: 20px;
+      color: #333;
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  
+    /* تعديل النص داخل المودال */
+    .modal-text {
+      margin-bottom: 15px;
+    }
+  
+    /* تنسيق الأزرار */
+    .btn-secondary {
+      background-color: #2575fc; /* زر بلون أزرق */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .btn-secondary:hover {
+      background-color: #6a11cb; /* تأثير عند المرور */
+    }
+  
+    /* تحسين الاستجابة للأجهزة الصغيرة */
+    @media (max-width: 480px) {
+      .modal-body {
+        padding: 15px;
+      }
+  
+      .modal-text {
+        font-size: 1em;
+      }
+  
+      .btn-secondary {
+        font-size: 1em;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+    <script>
+        // تفعيل زر الإغلاق في المودال
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+          keyboard: false
+        });
+        
+        // يمكن استخدام هذا الزر لفتح المودال عند الحاجة
+        // myModal.show();
+      </script>
+              <style>
+                /* تنسيق زر الرجوع */
+                .back-button {
+                  position: fixed;
+                  bottom: 80px; /* يتم رفعه فوق الشريط السفلي */
+                  right: 20px;  /* المسافة من الجهة اليمنى */
+                  z-index: 10;  /* التأكد من أن الزر فوق الشريط */
+                  padding: 10px 20px;
+                  font-size: 1.2em;
+                  background-color: #2575fc;
+                  color: white;
+                  border-radius: 10px;
+                  text-decoration: none;
+                  transition: background-color 0.3s ease;
+                }
+              
+                .back-button:hover {
+                  background-color: #6a11cb; /* تغيير اللون عند التمرير */
+                }
+              
+                /* باقي التنسيقات يمكن أن تبقى كما هي */
+              </style>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8">
+    <title>تحويل النص إلى لغة الإشارة</title>
+    <meta name="description" content="قم بترجمة الكلام النصي الى لغة الإشارة، حيث يمكنك ان تقوم بادخال  اي نص تريده باللغة العربية، وسيتم تحويله الى لغة الإشارة" />
+    <meta name="keywords" content="تحويل, لغة, الاشارة, الصم, اخرس, لا يتكلم, ترجمة, مساعدة">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="ترجم لغة النص الى لغة الإشارة" />
+    <meta property="og:type" content="text" />
+    <meta property="og:description" content="قم بترجمة الكلام النصي الى لغة الإشارة، حيث يمكنك ان تقوم بادخال  اي نص تريده باللغة العربية، وسيتم تحويله الى لغة الإشارة" />
+    <meta name="twitter:title" content="ترجم لغة النص الى لغة الإشارة" />
+    <meta name="twitter:description" content="قم بترجمة الكلام النصي الى لغة الإشارة، حيث يمكنك ان تقوم بادخال  اي نص تريده باللغة العربية، وسيتم تحويله الى لغة الإشارة" />
+    
+    <!-- استيراد الخطوط وملفات الـ CSS -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <style>
+      /* تنسيق الخطوط */
+      * {
+        font-family: 'Almarai', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f4f4f9; /* خلفية هادئة */
+        color: #333; /* لون النص */
+        line-height: 1.6;
+      }
+      
+      /* تنسيق العناوين */
+      h1, h2, h3 {
+        color: #6a11cb; /* لون العنوان */
+        font-weight: 700;
+      }
+
+      /* تنسيق الأزرار */
+      .btn {
+        background-color: #2575fc; /* زر بلون أزرق */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #6a11cb; /* تأثير عند المرور */
+      }
+
+      /* تحسين الاستجابة للأجهزة الصغيرة */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5em;
+        }
+        .btn {
+          font-size: 0.9em;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- محتوى الصفحة هنا -->
+    <!DOCTYPE html>
+    <html lang="ar">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>تحويل النص إلى لغة الإشارة</title>
+        <meta name="description" content="قم بترجمة الكلام النصي الى لغة الإشارة، حيث يمكنك ان تقوم بادخال  اي نص تريده باللغة العربية، وسيتم تحويله الى لغة الإشارة" />
+        <meta name="keywords" content="تحويل, لغة, الاشارة, الصم, اخرس, لا يتكلم, ترجمة, مساعدة">
+        <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+        
+        <!-- استيراد الخطوط وملفات الـ CSS -->
+        <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/all.min.css">
+
+        <style>
+          * {
+            font-family: 'Almarai', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+    
+          body {
+            background-color: #f8f9fa; /* خلفية الصفحة */
+            color: #333;
+            line-height: 1.6;
+          }
+    
+          .navbar {
+            margin-bottom: 20px;
+          }
+    
+          .navbar-brand {
+            font-weight: bold;
+          }
+    
+          .btn, .navbar-nav a {
+            transition: all 0.3s ease;
+          }
+    
+          .btn:hover, .navbar-nav a:hover {
+            color: #fff;
+            background-color: #6a11cb; /* تأثير عند التمرير */
+          }
+    
+          /* تصميم المربع الذي يحتوي على النص */
+          #textInput {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+          }
+    
+          #imageOutput {
+            display: table;
+            margin: 20px auto;
+          }
+    
+          #title {
+            display: table;
+            margin: 20px auto;
+            color: #6a11cb; /* لون العنوان */
+            font-weight: 700;
+          }
+    
+          /* تصميم الصورة */
+          img {
+            width: 50px;
+            height: 50px;
+          }
+    
+          #akour {
+            background-color: rgb(#5331da);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+          }
+    
+          #akour:hover {
+            background-color: #6a11cb;
+          }
+    
+          footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            font-size: 1rem;
+            color: #333;
+          }
+    
+          .footer-text {
+            margin-bottom: 10px;
+          }
+    
+          .alert {
+            font-size: 1em;
+            margin: 10px 0;
+            border-radius: 10px;
+          }
+    
+          /* تحسين الاستجابة للأجهزة الصغيرة */
+          @media (max-width: 480px) {
+            #textInput {
+              width: 90%;
+            }
+    
+            #title h1 {
+              font-size: 1.5em;
+            }
+          }
+        </style>
+      </head>
+      <body dir="rtl">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-warning" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">المحوّل</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" href="index.html">الرئيسية</a>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#aboutModal">من أنا</a>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">معلومات عن الطالب</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+          <section class="text-center container" style="border-radius: 15px; box-shadow: 0 0 4px rgb(0 0 0 / 30%); background: #ffffff;">
+            <div class="row gx-4 text-center" style="padding: 5px; background: #eceef2; border-bottom: 1px solid #ddd; border-radius: 16px 16px 0 0;">
+              <div class="row text-center"></div>
+            </div>
+    
+            <div id="title">
+              <h1>تحويل النص الى لغة الإشارة</h1>
+            </div>
+            <input type="text" id="textInput" placeholder="إكتب النص المراد ترجمته" class="form-control">
+            <div id="imageOutput" class="highlight"></div>
+            <br>
+          </section>
+        </main>
+
+        <br>
+
+        <!-- Footer -->
+        <footer class="bg-light text-center">
+          <div class="container p-4">
+            <section class="mb-4">
+              <p class="alert alert-danger">
+                هذا التطبيق مصصم لمسابقة المبتكر الصغير بعمل الطالب يوسف أحمد محمد جمعة
+              </p>
+              <p class="alert alert-success">
+                أتمنى أن يساعد هذا التطبيق العديد من الناس
+              </p>
+            </section>
+          </div>
+          
+          <!-- زر الرجوع -->
+          <button onclick="window.location.href='index.html'" class="back-button">
+            <span class="arrow">&#8592;</span> رجوع
+          </button>
+          
+          
+          <div class="text-center p-3" style="background-color: rgb(83 49 218); color:#ffffff;">
+            صُمم بكل ❤️ بواسطة: <a href="https://akour.me/ar" target="_blank" id="akour">يوسف جمعة</a>
+          </div>
+        </footer>
+        <style>
+          /* تنسيق زر الرجوع */
+          .back-button {
+            position: fixed;
+            bottom: 80px; /* يتم رفعه فوق الشريط السفلي */
+            right: 20px;  /* المسافة من الجهة اليمنى */
+            z-index: 10;  /* التأكد من أن الزر فوق الشريط */
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #2575fc;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+          }
+        
+          .back-button:hover {
+            background-color: #6a11cb; /* تغيير اللون عند التمرير */
+          }
+        
+          /* باقي التنسيقات يمكن أن تبقى كما هي */
+        </style>
+      </body>
+    </html>
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <script>
+      const images = {
+        "ء": "images/ء.jpg",
+        "أ": "images/أ.jpg",
+        "ا": "images/ا.jpg",
+        "آ": "images/آ.jpg",
+        "ب": "images/ب.jpg",
+        "ت": "images/ت.jpg",
+        "ة": "images/ة.jpg",
+        "ث": "images/ث.jpg",
+        "ج": "images/ج.jpg",
+        "ح": "images/ح.jpg",
+        "خ": "images/خ.jpg",
+        "د": "images/د.jpg",
+        "ذ": "images/ذ.jpg",
+        "ر": "images/ر.jpg",
+        "ز": "images/ز.jpg",
+        "س": "images/س.jpg",
+        "ش": "images/ش.jpg",
+        "ص": "images/ص.jpg",
+        "ض": "images/ض.jpg",
+        "ط": "images/ط.jpg",
+        "ظ": "images/ظ.jpg",
+        "ع": "images/ع.jpg",
+        "غ": "images/غ.jpg",
+        "ف": "images/ف.jpg",
+        "ق": "images/ق.jpg",
+        "ك": "images/ك.jpg",
+        "ل": "images/ل.jpg",
+        "لا": "images/لا.jpg",
+        "م": "images/م.jpg",
+        "ن": "images/ن.jpg",
+        "ه": "images/ه.jpg",
+        "و": "images/و.jpg",
+        "ؤ": "images/ؤ.jpg",
+        "ي": "images/ي.jpg",
+        "ئ": "images/ئ.jpg",
+        "ى": "images/ى.jpg"
+      };
+
+      const textInput = document.getElementById("textInput");
+      const imageOutput = document.getElementById("imageOutput");
+
+      // تحويل النص إلى صور
+      function convertTextToImages() {
+        const text = textInput.value;
+        let output = "";
+
+        for (let i = 0; i < text.length; i++) {
+          const char = text.charAt(i);
+          if (char in images) {
+            output += '<img src="' + images[char] + '">';
+          } else {
+            output += char;
+          }
+        }
+
+        imageOutput.innerHTML = output;
+      }
+
+      textInput.addEventListener("input", convertTextToImages);
+    </script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="aboutModalLabel">عن المشروع</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-text">
+            أنا يوسف، شاب طموح ومهتم بتطوير الحلول المبتكرة باستخدام التكنولوجيا. أشارك حاليًا في 
+            <strong>مسابقة المبتكر الصغير</strong>، التي تهدف إلى تشجيع الشباب على تصميم تطبيقات تخدم المجتمع وتعالج تحدياته اليومية.
+          </p>
+          <p class="modal-text">
+            فكرتي للمسابقة تدور حول تصميم تطبيق لتحويل اللغة العربية إلى لغة الإشارة، وهو حل مبتكر يهدف إلى تسهيل التواصل مع الأشخاص الذين يعانون من صعوبات في السمع أو النطق.
+          </p>
+          <p class="modal-text">
+            جاءت الفكرة عندما أدركت مدى الصعوبة التي يواجهها البعض في التفاعل مع الأشخاص الذين يستخدمون لغة الإشارة. الهدف من المشروع هو توفير أداة سهلة الاستخدام تعمل على تحويل النصوص العربية إلى إشارات بصرية واضحة، مما يعزز من التفاهم المتبادل ويقلل من الحواجز بين مختلف فئات المجتمع.
+          </p>
+          <p class="modal-text">
+            أؤمن أن هذا التطبيق لن يكون مجرد مشروع تقني، بل خطوة نحو بناء مجتمع أكثر شمولية وتفهمًا لاحتياجات الجميع. أتمنى أن أتمكن من تقديم هذا الحل وتحقيق نتائج مميزة في المسابقة!
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* تنسيق المودال */
+    .modal-content {
+      background: rgba(255, 255, 255, 0.9); /* خلفية خفيفة لتوفير تباين */
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة تأثير الظل */
+    }
+  
+    /* تنسيق رأس المودال */
+    .modal-header {
+      border-bottom: 1px solid #eee; /* فصل رأس المودال */
+      background-color: #6a11cb; /* خلفية ملونة */
+      border-radius: 15px 15px 0 0;
+      color: white;
+    }
+  
+    /* تنسيق النص داخل المودال */
+    .modal-body {
+      padding: 20px;
+      color: #333;
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  
+    /* تعديل النص داخل المودال */
+    .modal-text {
+      margin-bottom: 15px;
+    }
+  
+    /* تنسيق الأزرار */
+    .btn-secondary {
+      background-color: #2575fc; /* زر بلون أزرق */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .btn-secondary:hover {
+      background-color: #6a11cb; /* تأثير عند المرور */
+    }
+  
+    /* تحسين الاستجابة للأجهزة الصغيرة */
+    @media (max-width: 480px) {
+      .modal-body {
+        padding: 15px;
+      }
+  
+      .modal-text {
+        font-size: 1em;
+      }
+  
+      .btn-secondary {
+        font-size: 1em;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+  
+
+<!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-text">
+          أنا يوسف، شاب طموح ومتحمس لاستخدام التكنولوجيا لحل المشكلات وابتكار حلول جديدة. أتمتع بشغف كبير بمجال البرمجة، وأعمل على تطوير تطبيقات ذكية تسهم في تحسين حياة الناس. شاركت في مسابقة المبتكر الصغير من خلال تصميم تطبيق يهدف إلى تحويل اللغة العربية إلى لغة الإشارة، وذلك بهدف تسهيل التواصل مع الأشخاص الذين يعانون من صعوبات في السمع والنطق.
+
+          أنا متعلم شغوف بالبرمجة ولدي مهارات قوية في لغات مثل Python وJava، وأرغب في توسيع معرفتي وتطوير مهاراتي في هذا المجال. كما أنني مهتم بشكل خاص بتقنيات الذكاء الاصطناعي وكيفية دمجها في تطوير التطبيقات.
+
+          في حياتي المهنية، أعمل كمصمم جرافيك، حيث أمتلك خبرة في تصميم الإعلانات والمواد الترويجية على وسائل التواصل الاجتماعي، بالإضافة إلى تطوير مواقع الويب. أنا شخص مبدع وأحب أن أقدم حلول تصميم مبتكرة تلبي احتياجات العملاء.
+
+          حالياً أنا طالب في مدرسة سعاد محرم الثانوية في المرحلة الثانوية، ومن المتوقع أن أتخرج في عام 2028. أسعى جاهدًا لتعلم المزيد عن الأمن السيبراني وتطبيقاته في العالم الرقمي.
+
+          أتحدث اللغة العربية بطلاقة، ولدي مستوى جيد جدًا في اللغة الإنجليزية. أحب متابعة أحدث التطورات التكنولوجية وأستمتع بتعلم كل ما هو جديد في مجال البرمجة وتكنولوجيا المعلومات.
+
+          من هواياتي البرمجة وتصميم المواقع الإلكترونية، بالإضافة إلى التصوير الفوتوغرافي ومتابعة أحدث تقنيات الذكاء الاصطناعي.
+
+          إذا كنت تبحث عن شاب متحمس ولديه رؤية مستقبلية في عالم التكنولوجيا، فأنا مستعد لتقديم حلول مبتكرة وفعالة لكل التحديات.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* تنسيق المودال */
+  .modal-content {
+    background: rgba(255, 255, 255, 0.9); /* خلفية خفيفة لتوفير تباين */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة تأثير الظل */
+  }
+
+  /* تنسيق رأس المودال */
+  .modal-header {
+    border-bottom: 1px solid #eee; /* فصل رأس المودال */
+    background-color: #6a11cb; /* خلفية ملونة */
+    border-radius: 15px 15px 0 0;
+    color: white;
+  }
+
+  /* تنسيق النص داخل المودال */
+  .modal-body {
+    padding: 20px;
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* تعديل النص داخل المودال */
+  .modal-text {
+    margin-bottom: 15px;
+  }
+
+  /* تنسيق الأزرار */
+  .btn-secondary {
+    background-color: #2575fc; /* زر بلون أزرق */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #6a11cb; /* تأثير عند المرور */
+  }
+
+  /* تحسين الاستجابة للأجهزة الصغيرة */
+  @media (max-width: 480px) {
+    .modal-body {
+      padding: 15px;
+    }
+
+    .modal-text {
+      font-size: 1em;
+    }
+
+    .btn-secondary {
+      font-size: 1em;
+      padding: 8px 16px;
+    }
+  }
+</style>
+
+
+<style>
+  /* تصميم الزر */
+.back-button {
+  background-color: rgb(83 49 218); /* اللون الخلفي للزر */
+  color: white; /* اللون النص */
+  border: none; /* إزالة الحدود */
+  padding: 10px 20px; /* المسافة داخل الزر */
+  text-align: center; /* محاذاة النص */
+  font-size: 16px; /* حجم الخط */
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور على الزر */
+  border-radius: 5px; /* حواف دائرية */
+  display: inline-flex; /* لعرض السهم والنص بجانب بعض */
+  align-items: center; /* محاذاة العناصر */
+  transition: background-color 0.3s ease; /* تأثير التحول */
+}
+
+/* تصميم السهم */
+.arrow {
+  margin-right: 8px; /* المسافة بين السهم والنص */
+}
+
+/* تأثير التحول عند التمرير على الزر */
+.back-button:hover {
+  background-color: #a04598; /* تغيير اللون عند التمرير */
+}
+
+</style>
+</body>
+</html>
